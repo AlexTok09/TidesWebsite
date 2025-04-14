@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The harmonic constants, 2025</title>
+
+  <!-- Google Fonts: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      font-size: 12px;
+    }
+
+    .container {
+      padding: 3rem 1rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 16px;
+      font-weight: 400;
+      margin: 0 0 0.5rem 0;
+    }
+
+    h2 {
+      font-size: 12px;
+      font-weight: normal;
+      color: #333333;
+      margin: 0 0 1.5rem 0;
+    }
+
+    #map-container {
+      margin: 2rem 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+
+    p.description {
+      margin-top: 2rem;
+      line-height: 1.6;
+      font-size: 12px;
+      color: #333333;
+    }
+
+    .image-text-section {
+      margin-top: 3rem;
+    }
+
+    .image-text-section h3 {
+      font-size: 16px;
+      font-weight: 400;
+      margin: 0 0 1rem 0;
+    }
+
+    .image-text-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-direction: row; /* Image à gauche, texte à droite */
+    }
+
+    .image-text-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      width: 200px;
+      flex-shrink: 0; /* Empêche l'image de rétrécir */
+    }
+
+    .text-content {
+      flex: 1;
+    }
+
+    .text-content p {
+      font-size: 12px;
+      font-family: Roboto, sans-serif;
+      color: #333;
+      max-width: 200px; /* Réduit de moitié la largeur du texte */
+      margin: 0 0 1rem 0;
+      line-height: 1.6;
+    }
+
+    .text-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Media queries pour les appareils plus petits */
+    @media (max-width: 768px) {
+      .image-text-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .image-text-container img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 1rem;
+      }
+
+      .text-content p {
+        max-width: 100%; /* Pleine largeur sur mobile */
+      }
+      
+      #map {
+        height: 300px; /* Carte plus petite sur mobile */
+      }
+    }
+
+    /* Media queries pour les très petits écrans */
+    @media (max-width: 480px) {
+      .container {
+        padding: 2rem 0.75rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 14px;
+      }
+
+      h2 {
+        font-size: 11px;
+      }
+
+      #map {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>The harmonic constants, 2025</h1>
+    <h2>With <a href="https://www.distributedgallery.com/" style="color: #888; text-decoration: none;">Distributed Gallery</a></h2>
+
+    <div id="map-container">
+      <div id="map"></div>
+    </div>
+
+    <p style="margin-top: 2rem; font-size: 12px; font-family: Roboto, sans-serif; color: #333;">
+        Each artwork on this map is an NFT whose visibility and availability are directly tied to the Thames tide. As the tide recedes, the work gradually appears; as the tide rises, it fades. Each NFT is only tradable for one hour at low tide, correlating its liquidity to the natural rhythm of the river. This tidal protocol will remain active for the next twelve years.
+        <br><br>
+        The locking and unlocking of each artwork is handled by the <em><a href="https://aside.distributedgallery.art/" style="color: #888; text-decoration: none;">[aside]</a></em> protocol running on Ethereum. The tidal data that governs each artwork's state is embedded directly into its metadata and stored permanently via IPFS.
+        <br><br>
+        This project is a way to enact one of <em><a href="https://aside.distributedgallery.art/" style="color: #888; text-decoration: none;">[aside·eth]</a></em>'s founding intuitions: to act as the stitching point between phenomena that are ordinarily separated, by linking artworks' liquidity to outside world events through oracle technologies. Thus, the economic lifecycle of an artwork and the world's life become truly interdependent.
+    </p>
+      
+    <div class="image-text-section">
+      <h3>Process & Research</h3>
+      <div class="image-text-container">
+        <img src="https://bafybeifinodbyelkiwwtswijdto6lkmawvz73pwqnjbo7bx2rzr6w2cpi4.ipfs.w3s.link/shell.png"
+             alt="Shell sculpture" />
+      
+        <div class="text-content">
+          <p>
+            The tidal cycles inform both the 
+            physical and digital artwork, 
+            creating a rhythmic pattern that 
+            echoes the natural flows of the 
+            Thames river itself.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit. 
+            Phasellus tristique ligula nec 
+            facilisis elementum. Duis fermentum
+            commodo ultrices.
+          </p>
+          <p>
+            Nulla facilisi. Vivamus at 
+            bibendum lectus. Integer ultrices
+            magna quis faucibus consequat. 
+            Nullam venenatis diam ac felis 
+            suscipit tincidunt.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
