@@ -221,26 +221,7 @@
     <div class="image-text-section">
       <h3>Process & Research</h3>
       <p class="main-text" style="margin-bottom: 0;">
-        The map represents the set of artworks distributed along the Thames, each one synchronized with the tidal rhythm of the specific location where it is situated.
-      </p>
-      <p class="main-text" style="margin-top: 0; margin-bottom: 1rem;">
-        The process of creating the tidal data was particularly long and meticulous. It began with the collection of twelve years of <a href="https://tidesandcurrents.noaa.gov/about_harmonic_constituents.html" style="color: #333; text-decoration: underline;">harmonic constituents</a>, a type of data that models tides based on the gravitational interactions between the Moon, the Sun, and the Earth, through regular cycles known as harmonic constituents.
-      </p>
-
-      <div class="image-text-container" style="justify-content: center; margin-top: 2rem; max-width: 50%; margin-left: auto; margin-right: auto;">
-        <img src="TideCurve.png"
-             alt="Tide curve visualization"
-             style="display: block; width: 100%; max-width: 100%;" />
-      </div>
-
-      <p class="main-text" style="margin-top: 3rem; margin-bottom: 0;">
-        This was done using <a href="https://eoceanic.com/sailing/tips/35/309/a_tide_and_current_predictor_when_cruising_in_unfamiliar_waters/?" style="color: #333; text-decoration: underline;">Xtide32</a>, a software tool that generates accurate tidal predictions based on these models.
-      </p>
-      <p class="main-text" style="margin-top: 0; margin-bottom: 0;">
-        Next came the task of comparing the theoretical data with the actual records provided by the <a href="https://pla.co.uk/" style="color: #333; text-decoration: underline;">Port of London Authority</a>, in order to calculate specific time offsets for each point along the map. These offsets were necessary to align the harmonic data with observed reality at each location.
-      </p>
-      <p class="main-text" style="margin-top: 0;">
-        These timestamps precisely mark the moments when the tide reaches its high or low point, determining when each artwork becomes visible or hidden.
+        The map represents the set of artworks distributed along the Thames, each one synchronized with the tidal rhythm of the specific location where it is situated. The process of creating the tidal data was particularly long and meticulous. It began with the creation of twelve years of <a href="https://tidesandcurrents.noaa.gov/about_harmonic_constituents.html" style="color: #333; text-decoration: underline;">harmonic constituents</a> for Southend Pier and Tilbury Dock, a type of data that models tides based on the gravitational interactions between the Moon, the Sun, and the Earth, through regular cycles known as harmonic constituents. This was done using <a href="https://eoceanic.com/sailing/tips/35/309/a_tide_and_current_predictor_when_cruising_in_unfamiliar_waters/?" style="color: #333; text-decoration: underline;">Xtide32</a>, a software tool that generates accurate tidal predictions based on these models. Next came the task of comparing the theoretical data with the actual records provided by the <a href="https://pla.co.uk/" style="color: #333; text-decoration: underline;">Port of London Authority</a>, in order to calculate specific time offsets for each point along the map. These offsets were necessary to align the harmonic data with observed reality at each location and thus create a unique dataset enabling the generation of 12 years of tides data at various points along the Thames. These timestamps precisely mark the moments when the tide reaches its high or low point, determining when each artwork becomes visible or hidden.
       </p>
     </div>
 
@@ -252,10 +233,10 @@
       </div>
     </div>
 
-    <p class="main-text">
+    <p class="main-text" style="margin-top: 0.5rem; margin-bottom: 0;">
       All this information is structured into JSON tables, directly embedded in the metadata of each artwork. In the browser, this allows the overlay to dynamically adapt in real time based on the current tide, using the timestamps as reference points. Separately, the timestamps also serve as the data source for the <a href="https://aside.distributedgallery.art/" class="aside-link">[aside]</a> protocol running on Ethereum, which triggers the unlocking of artworks during each low tide, and their relocking exactly one hour later.
     </p>
-    <p class="main-text">
+    <p class="main-text" style="margin-top: 0.5rem;">
       This project enacts one of <a href="https://aside.distributedgallery.art/" class="aside-link">[aside·eth]</a>'s founding intuitions: to act as the stitching point between phenomena that are ordinarily separated, by linking artworks' liquidity to outside world events. Thus, the economic lifecycle of an artwork and the world's life become truly interdependent. The work is a way of demonstrating that it is possible to let nature dictate the economy. In this sense, the artwork becomes an exemplum in the true meaning of the term — a concrete demonstration that another kind of economy is possible.
     </p>
 
