@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The harmonic constants, 2025</title>
+  <title>The Shell Record: Breathings of the Moon</title>
 
   <!-- Google Fonts: Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -19,6 +19,7 @@
       background-color: #ffffff;
       color: #333333;
       font-size: 12px;
+      line-height: 1.6;
     }
 
     .container {
@@ -39,7 +40,27 @@
       font-size: 12px;
       font-weight: normal;
       color: #333333;
-      margin: 0 0 1.5rem 0;
+      margin: 0 0 2rem 0;
+    }
+
+    .main-text {
+      font-size: 12px;
+      font-family: Roboto, sans-serif;
+      color: #333;
+      margin: 1rem 0;
+      line-height: 1.6;
+    }
+
+    .quote-text {
+      font-style: italic;
+      margin-bottom: 0.25rem;
+    }
+
+    .quote-attribution {
+      margin-top: 0;
+      margin-bottom: 2rem;
+      font-size: 11px;
+      color: #666;
     }
 
     #map-container {
@@ -68,66 +89,61 @@
     .image-text-section h3 {
       font-size: 16px;
       font-weight: 400;
-      margin: 0 0 1rem 0;
+      margin: 0 0 2rem 0;
     }
 
     .image-text-container {
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
-      gap: 2rem;
-      flex-direction: row; /* Image à gauche, texte à droite */
+      gap: 3rem;
+      flex-direction: row;
+      margin-top: 2rem;
     }
 
     .image-text-container img {
       max-width: 100%;
       height: auto;
       border-radius: 8px;
-      width: 200px;
-      flex-shrink: 0; /* Empêche l'image de rétrécir */
+      width: 450px;
+      flex-shrink: 0;
+      object-fit: cover;
     }
 
     .text-content {
       flex: 1;
+      max-width: 600px;
     }
 
     .text-content p {
       font-size: 12px;
-      font-family: Roboto, sans-serif;
-      color: #333;
-      max-width: 200px; /* Réduit de moitié la largeur du texte */
-      margin: 0 0 1rem 0;
+      margin: 0 0 0.75rem 0;
       line-height: 1.6;
+      max-width: 600px;
     }
 
     .text-content p:last-child {
       margin-bottom: 0;
     }
 
-    /* Media queries pour les appareils plus petits */
+    .aside-link {
+      font-style: italic;
+      color: #333;
+      text-decoration: none;
+    }
+
     @media (max-width: 768px) {
       .image-text-container {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
+        gap: 3rem;
       }
 
       .image-text-container img {
         width: 100%;
-        max-width: 300px;
-        margin-bottom: 1rem;
-      }
-
-      .text-content p {
-        max-width: 100%; /* Pleine largeur sur mobile */
-      }
-      
-      #map {
-        height: 300px; /* Carte plus petite sur mobile */
+        max-width: 450px;
       }
     }
 
-    /* Media queries pour les très petits écrans */
     @media (max-width: 480px) {
       .container {
         padding: 2rem 0.75rem 1.5rem;
@@ -145,55 +161,126 @@
         height: 250px;
       }
     }
+
+    .research-drawings {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0;
+      justify-content: flex-start;
+    }
+
+    .research-drawings img {
+      width: calc(50% - 1rem);
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .research-drawings {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .research-drawings img {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>The harmonic constants, 2025</h1>
+    <h1>The Shell Record: Breathings of the Moon</h1>
     <h2>With <a href="https://www.distributedgallery.com/" style="color: #888; text-decoration: none;">Distributed Gallery</a></h2>
+
+    <p class="main-text quote-text">
+        But the most admirable thing of all is the union of the ocean with the orbit of the moon. At every rising and every setting of the moon the sea violently covers the coast far and wide, sending forth its surge, which the Greeks call reuma; and once this same surge has been drawn back it lays the beaches bare, and simultaneously mixes the pure outpourings of the rivers with and abundance of brine, and swells them with its waves. As the moon passes by without delay, the sea recedes and leaves the outpourings in their original state of purity and their original quantity. It is as though it is unwittingly drawn up by some breathings of the moon, and then returns to its normal level when this same influence ceases.
+    </p>
+    <p class="main-text quote-attribution">
+        Opera de Temporibus, Section XXIX, the Venerable Bede, 703 AD
+    </p>
 
     <div id="map-container">
       <div id="map"></div>
     </div>
 
-    <p style="margin-top: 2rem; font-size: 12px; font-family: Roboto, sans-serif; color: #333;">
-        Each artwork on this map is an NFT whose visibility and availability are directly tied to the Thames tide. As the tide recedes, the work gradually appears; as the tide rises, it fades. Each NFT is only tradable for one hour at low tide, correlating its liquidity to the natural rhythm of the river. This tidal protocol will remain active for the next twelve years.
+    <p class="main-text">
+        This collection is made up of AI generated shells, trained on a dataset of photographs I have taken over many years. The images are created using a combination of different neural networks, the fidelity and detail sharper than I was able to achieve four years ago) but still retaining on close inspection some of the weirdness and uncanniness that draws me to working with machine learning. The Thames is a tidal river with two tides a day. The protocol inside of the smart contract dictates that the image of the shell will only be visible at low tide; at high tide the image will be entirely covered in black. Each different token is assigned a different location along the Thames, from the head of the tidal river to the mouth, so that each one reveals itself fully at slightly different times. There is a two and a half hour difference between the tides at Margate and Hammersmith. Only when the shell is fully visible (around an hour) will the owner be able to sell the work. This locking and unlocking of the work and ebbing and flowing of the image will happen twice a day, every day for twelve years when the project will conclude. I have always been interested in introducing friction into marketplaces, particularly when it asks a buyer or seller to slow down and step out of traditional exchange dynamics. Rather than being an asset kept in a wallet to accumulate value and traded, the work asks for attention if it needs to be sold. Only by looking, and waiting, can someone determine if it can be. In a world where technology increasingly brings instant satisfaction, I want to work against this and to encourage the act of observation and seeing.
         <br><br>
-        The locking and unlocking of each artwork is handled by the <em><a href="https://aside.distributedgallery.art/" style="color: #888; text-decoration: none;">[aside]</a></em> protocol running on Ethereum. The tidal data that governs each artwork's state is embedded directly into its metadata and stored permanently via IPFS.
-        <br><br>
-        This project is a way to enact one of <em><a href="https://aside.distributedgallery.art/" style="color: #888; text-decoration: none;">[aside·eth]</a></em>'s founding intuitions: to act as the stitching point between phenomena that are ordinarily separated, by linking artworks' liquidity to outside world events through oracle technologies. Thus, the economic lifecycle of an artwork and the world's life become truly interdependent.
+        It is part of my ongoing interest in linking history and technology, objects and speculation and the nature found on the river Thames. I have been collecting shells from the foreshore of the Thames, one of the largest open archaeological sites in the world, right in the shadow of one of the centres of global financial capitalism for many years now. The act of collecting, cataloguing, training, generating, and tokenizing these shells creates a new form of value in the shadow of the old. But these shells have a history of their own, far beyond their use as mere items of exchange. Shells have been used as stores of value and tokens of ritual significance for thousands of years. Before the rise of modern financial systems, shells were used as money on nearly every continent on earth. After the rise, shells were even the subject of a speculative mania (much like tulips) where European collectors spent enormous sums of money on rare shells in the 18th and 19th centuries.
+        
+        <div class="research-drawings">
+          <img src="ResearchDraw1.jpg" alt="Research Drawing 1" />
+          <img src="ResearchDraw2.jpg" alt="Research Drawing 2" />
+        </div>
+
+        The title of the series references Bede, an English monk, who amongst other things was deeply interested in and influential in creating an ecclesiastical calendar system for the country. Part of the way that he did this was through observation of the world as he saw it - solstices, equinoxes, moons. Much of my work is also to do with cycles and knowing through things unfolding over time. It feels fitting for me to use his quotation in this work that questions what happens when natural cycles collide with manmade systems.
     </p>
-      
+
     <div class="image-text-section">
       <h3>Process & Research</h3>
-      <div class="image-text-container">
-        <img src="https://bafybeifinodbyelkiwwtswijdto6lkmawvz73pwqnjbo7bx2rzr6w2cpi4.ipfs.w3s.link/shell.png"
-             alt="Shell sculpture" />
-      
-        <div class="text-content">
-          <p>
-            The tidal cycles inform both the 
-            physical and digital artwork, 
-            creating a rhythmic pattern that 
-            echoes the natural flows of the 
-            Thames river itself.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, 
-            consectetur adipiscing elit. 
-            Phasellus tristique ligula nec 
-            facilisis elementum. Duis fermentum
-            commodo ultrices.
-          </p>
-          <p>
-            Nulla facilisi. Vivamus at 
-            bibendum lectus. Integer ultrices
-            magna quis faucibus consequat. 
-            Nullam venenatis diam ac felis 
-            suscipit tincidunt.
-          </p>
-        </div>
+      <p class="main-text" style="margin-bottom: 0;">
+        The map represents the set of artworks distributed along the Thames, each one synchronized with the tidal rhythm of the specific location where it is situated.
+      </p>
+      <p class="main-text" style="margin-top: 0; margin-bottom: 1rem;">
+        The process of creating the tidal data was particularly long and meticulous. It began with the collection of twelve years of <a href="https://tidesandcurrents.noaa.gov/about_harmonic_constituents.html" style="color: #333; text-decoration: underline;">harmonic constituents</a>, a type of data that models tides based on the gravitational interactions between the Moon, the Sun, and the Earth, through regular cycles known as harmonic constituents.
+      </p>
+
+      <div class="image-text-container" style="justify-content: center; margin-top: 2rem; max-width: 50%; margin-left: auto; margin-right: auto;">
+        <img src="TideCurve.png"
+             alt="Tide curve visualization"
+             style="display: block; width: 100%; max-width: 100%;" />
+      </div>
+
+      <p class="main-text" style="margin-top: 3rem; margin-bottom: 0;">
+        This was done using <a href="https://eoceanic.com/sailing/tips/35/309/a_tide_and_current_predictor_when_cruising_in_unfamiliar_waters/?" style="color: #333; text-decoration: underline;">Xtide32</a>, a software tool that generates accurate tidal predictions based on these models.
+      </p>
+      <p class="main-text" style="margin-top: 0; margin-bottom: 0;">
+        Next came the task of comparing the theoretical data with the actual records provided by the <a href="https://pla.co.uk/" style="color: #333; text-decoration: underline;">Port of London Authority</a>, in order to calculate specific time offsets for each point along the map. These offsets were necessary to align the harmonic data with observed reality at each location.
+      </p>
+      <p class="main-text" style="margin-top: 0;">
+        These timestamps precisely mark the moments when the tide reaches its high or low point, determining when each artwork becomes visible or hidden.
+      </p>
+    </div>
+
+    <div class="image-text-section">
+      <div class="image-text-container" style="justify-content: center;">
+        <img src="TidesData.png"
+             alt="Tide data visualization"
+             style="display: block; width: 100%; max-width: 100%;" />
+      </div>
+    </div>
+
+    <p class="main-text">
+      All this information is structured into JSON tables, directly embedded in the metadata of each artwork. In the browser, this allows the overlay to dynamically adapt in real time based on the current tide, using the timestamps as reference points. Separately, the timestamps also serve as the data source for the <a href="https://aside.distributedgallery.art/" class="aside-link">[aside]</a> protocol running on Ethereum, which triggers the unlocking of artworks during each low tide, and their relocking exactly one hour later.
+    </p>
+    <p class="main-text">
+      This project enacts one of <a href="https://aside.distributedgallery.art/" class="aside-link">[aside·eth]</a>'s founding intuitions: to act as the stitching point between phenomena that are ordinarily separated, by linking artworks' liquidity to outside world events. Thus, the economic lifecycle of an artwork and the world's life become truly interdependent. The work is a way of demonstrating that it is possible to let nature dictate the economy. In this sense, the artwork becomes an exemplum in the true meaning of the term — a concrete demonstration that another kind of economy is possible.
+    </p>
+
+    <div class="image-text-section">
+      <h3 style="margin-bottom: 1rem;">Related Works</h3>
+      <div class="text-content">
+        <p>
+          <strong><a href="https://annaridler.com/the-shell-record-2021" style="color: #333; text-decoration: underline;">The Shell Record (2021)</a></strong><br>
+          [sold for $110k at the Sotheby's Digitally Native sale]<br>
+          The Shell Record is both a dataset of shells that I gathered from the foreshore of the river Thames in early 2021 and moving image pieces generated by using a GAN trained on this imagery. It explores ideas around collecting, value and trade and links to the history of shells being used as stores of value as one of the earliest forms of currency. It is also a work that is a record of the shells of the Thames, forever written into the blockchain, at this particular moment. A recent scientific paper shows that shells that have been in the river since the end of the last Ice Age have now become rare, replaced by other non-native species and that this will eventually become a time-marker for the Anthropocene as they become fossils in the strata.
+        </p>
+
+        <p style="margin-top: 2rem;">
+          <strong><a href="https://annaridler.com/ttl-2023" style="color: #333; text-decoration: underline;">TTL 200, TTL 400, TTL 800 (2023)</a></strong><br>
+          [owned by Kadist, Pablo, Benny]<br>
+          Time To Live (TTL) in computer networking marks the lifespan of data. The TTL series, comprising NFTs representing long-lived natural entities — clams, urchins, corals — defies this transience, architecting instead a tradability time lock of centuries. Each one can only be sold after 200, 400 or 800 years. While probing the confluence of time, nature's commercialisation, and fluctuating ecological economics, it also asks if a technology, only 15 years old, can truly understand deep temporal scales.
+        </p>
+      </div>
+    </div>
+
+    <div class="image-text-section">
+      <div class="image-text-container" style="justify-content: center;">
+        <img src="AnnaPicture.png"
+             alt="Artist collecting shells by the Thames"
+             style="display: block; width: 100%; max-width: 100%;" />
       </div>
     </div>
   </div>

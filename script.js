@@ -14,6 +14,10 @@ style.textContent = `
     background: rgba(255, 255, 255, 0.9) !important;
     backdrop-filter: blur(2px);
   }
+  .leaflet-popup-content img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
 `;
 document.head.appendChild(style);
 
@@ -30,7 +34,7 @@ const greyCustomPin = L.divIcon({
   html: `<div style="
     width: 14px;
     height: 14px;
-    background: rgba(136, 136, 136, 0.7); /* #888 avec 70% d'opacité */
+    background: rgba(136, 136, 136, 0.7);
     border-radius: 50% 50% 50% 0;
     transform: rotate(-45deg);
     box-shadow: 0 0 1px rgba(0,0,0,0.4);
@@ -46,17 +50,21 @@ const markersCoords = [];
 // Création des marqueurs et popups
 oeuvres.forEach(oeuvre => {
   const popupContent = `
-    <div style="max-width: 240px; min-height: 220px; font-family: Roboto, sans-serif;">
-      <h3 style="margin-top:0; font-size: 14px;">${oeuvre.titre}</h3>
-      <a href="${oeuvre.lien}" target="_blank">
-        <img src="${oeuvre.image}" alt="${oeuvre.titre}" style="width:100%; max-height:160px; object-fit:cover; border-radius:8px; margin-top:8px;">
+    <div style="width: 120px; min-height: 220px; font-family: Roboto, sans-serif;">
+      <h3 style="margin-top:0; font-size: 14px; color: #333;">${oeuvre.titre}</h3>
+      <a href="${oeuvre.lien}" target="_blank" style="display: block; text-decoration: none;">
+        <img src="${oeuvre.image}" alt="${oeuvre.titre}" 
+             style="width:100%; height:160px; object-fit:contain;
+                    border-radius:8px; margin-top:8px; cursor:pointer;
+                    transition: all 0.3s ease; background: white;">
       </a>
     </div>
   `;
 
   const marker = L.marker([oeuvre.lat, oeuvre.lng], { icon: greyCustomPin }).addTo(map);
   marker.bindPopup(popupContent, {
-    className: 'custom-popup' // Ajout d'une classe pour le popup
+    className: 'custom-popup',
+    maxWidth: 120
   });
 
   // Centrage automatique au clic
@@ -72,7 +80,12 @@ oeuvres.forEach(oeuvre => {
   markersCoords.push([oeuvre.lat, oeuvre.lng]);
 });
 
-// Ajuste la vue à tous les marqueurs
+// Ajuste la vue à tous les marqueurs avec padding
 map.fitBounds(markersCoords, {
   padding: [30, 30]
 });
+
+// Optionnel: Ajout d'un contrôle de zoom personnalisé
+L.control.zoom({
+  position: 'topright'
+}).addTo(map);
