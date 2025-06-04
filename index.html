@@ -210,6 +210,22 @@
         display: block;
       }
     }
+
+    @media (max-width: 768px) {
+      .fullwidth-mobile {
+        display: block;
+        width: 90vw !important;
+        max-width: 400px !important;
+        margin: 0.5rem auto 1.5rem auto !important;
+        border-radius: 12px;
+      }
+      .gifs-mobile, .books-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -232,10 +248,10 @@
     <p class="main-text">
         <a href="https://highlight.xyz/mint/base:0x43C662A35668641cB35f079fA5b35bD812693504" target="_blank" style="color: #333; text-decoration: underline;">This collection</a> is made up of AI generated shells, trained on a dataset of photographs I have taken over many years. The images are created using a combination of different neural networks, the fidelity and detail sharper than I was able to achieve four years ago) but still retaining on close inspection some of the weirdness and uncanniness that draws me to working with machine learning. The Thames is a tidal river with two tides a day. The protocol inside of the smart contract dictates that the image of the shell will only be visible at low tide; at high tide the image will be entirely covered in black. Each different token is assigned a different location along the Thames, from the head of the tidal river to the mouth, so that each one reveals itself fully at slightly different times. There is a two and a half hour difference between the tides at Margate and Hammersmith. Only when the shell is fully visible (around an hour) will the owner be able to sell the work. This locking and unlocking of the work and ebbing and flowing of the image will happen twice a day, every day for twelve years when the project will conclude. I have always been interested in introducing friction into marketplaces, particularly when it asks a buyer or seller to slow down and step out of traditional exchange dynamics. Rather than being an asset kept in a wallet to accumulate value and traded, the work asks for attention if it needs to be sold. Only by looking, and waiting, can someone determine if it can be. In a world where technology increasingly brings instant satisfaction, I want to work against this and to encourage the act of observation and seeing.
         
-        <div class="research-drawings">
-          <img src="ShellGIF1.gif" alt="Shell Animation 1" style="width: calc(33.33% - 1.33rem);" />
-          <img src="ShellGif2.gif" alt="Shell Animation 2" style="width: calc(33.33% - 1.33rem);" />
-          <img src="ShellGif3.gif" alt="Shell Animation 3" style="width: calc(33.33% - 1.33rem);" />
+        <div class="research-drawings gifs-mobile">
+          <img src="ShellGIF1.gif" alt="Shell Animation 1" class="fullwidth-mobile" />
+          <img src="ShellGif2.gif" alt="Shell Animation 2" class="fullwidth-mobile" />
+          <img src="ShellGif3.gif" alt="Shell Animation 3" class="fullwidth-mobile" />
         </div>
 
         It is part of my ongoing interest in linking history and technology, objects and speculation and the nature found on the river Thames. I have been collecting shells from the foreshore of the Thames, one of the largest open archaeological sites in the world, right in the shadow of one of the centres of global financial capitalism for many years now. The act of collecting, cataloguing, training, generating, and tokenizing these shells creates a new form of value in the shadow of the old. But these shells have a history of their own, far beyond their use as mere items of exchange. Shells have been used as stores of value and tokens of ritual significance for thousands of years. Before the rise of modern financial systems, shells were used as money on nearly every continent on earth. After the rise, shells were even the subject of a speculative mania (much like tulips) where European collectors spent enormous sums of money on rare shells in the 18th and 19th centuries.
@@ -273,9 +289,9 @@
       Each NFT comes with a handcrafted almanac listing all the buy and sell windows over the next 12 years, spanning 92 pages. The almanac is printed on 350g Edixion uncoated cover and 140g Edixion uncoated inner leaves.
  </p>
 
-    <div class="research-drawings" style="margin: 2rem auto; justify-content: center;">
-      <img src="Book1.jpeg" alt="Book 1" style="width: calc(50% - 1rem); transform: rotate(180deg);" />
-      <img src="Book2.jpeg" alt="Book 2" style="width: calc(50% - 1rem); transform: rotate(180deg);" />
+    <div class="research-drawings books-mobile">
+      <img src="Book1.jpeg" alt="Book 1" class="fullwidth-mobile" style="transform: rotate(180deg);" />
+      <img src="Book2.jpeg" alt="Book 2" class="fullwidth-mobile" style="transform: rotate(180deg);" />
     </div>
 
     <p class="main-text" style="margin-top: 0.5rem;">
@@ -283,7 +299,7 @@
     </p>
 
     <div style="margin: 2rem auto; display: block; text-align: center;">
-      <img src="Book3.jpeg" alt="Book 3" style="max-width: 100%; height: auto;" />
+      <img src="Book3.jpeg" alt="Book 3" class="fullwidth-mobile" style="max-width: 100%; height: auto;" />
     </div>
 
     <div class="image-text-section">
