@@ -211,19 +211,38 @@
       }
     }
 
+    .gifs-mobile {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .gifs-mobile img.fullwidth-mobile {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 900px) {
+      .gifs-mobile img.fullwidth-mobile {
+        max-width: 220px;
+      }
+    }
     @media (max-width: 768px) {
+      .gifs-mobile {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
       .fullwidth-mobile {
         display: block;
         width: 90vw !important;
         max-width: 400px !important;
         margin: 0.5rem auto 1.5rem auto !important;
         border-radius: 12px;
-      }
-      .gifs-mobile, .books-mobile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
       }
     }
   </style>
@@ -251,7 +270,6 @@
         <div class="research-drawings gifs-mobile">
           <img src="ShellGIF1.gif" alt="Shell Animation 1" class="fullwidth-mobile" />
           <img src="ShellGif2.gif" alt="Shell Animation 2" class="fullwidth-mobile" />
-          <img src="ShellGif3.gif" alt="Shell Animation 3" class="fullwidth-mobile" />
         </div>
 
         It is part of my ongoing interest in linking history and technology, objects and speculation and the nature found on the river Thames. I have been collecting shells from the foreshore of the Thames, one of the largest open archaeological sites in the world, right in the shadow of one of the centres of global financial capitalism for many years now. The act of collecting, cataloguing, training, generating, and tokenizing these shells creates a new form of value in the shadow of the old. But these shells have a history of their own, far beyond their use as mere items of exchange. Shells have been used as stores of value and tokens of ritual significance for thousands of years. Before the rise of modern financial systems, shells were used as money on nearly every continent on earth. After the rise, shells were even the subject of a speculative mania (much like tulips) where European collectors spent enormous sums of money on rare shells in the 18th and 19th centuries.
