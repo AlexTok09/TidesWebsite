@@ -87,21 +87,21 @@ const oeuvres = [
       titre: "Chelsea Bridge",
       lat: 51.4845718,
       lng: -0.1546622,
-      image: "Artworks/Tower_Bridge.png",
+      image: "Artworks/Chelsea_Bridge.png",
       lien: "https://ipfs.io/ipfs/QmWQed5sU8UW12BSv38DrgKY4Kcp8SYSgf9uUM3vdaTTgc/13.html"
     },
     {
       titre: "Putney Bridge",
       lat: 51.4669745,
       lng: -0.2154783,
-      image: "Artworks/Tower_Bridge.png",
+      image: "Artworks/Putney_Bridge.png",
       lien: "https://ipfs.io/ipfs/QmWQed5sU8UW12BSv38DrgKY4Kcp8SYSgf9uUM3vdaTTgc/14.html"
     },
     {
       titre: "Hammersmith Bridge",
       lat: 51.4884307,
       lng: -0.232761,
-      image: "Artworks/Tower_Bridge.png",
+      image: "Artworks/Hammersmith_Bridge.png",
       lien: "https://ipfs.io/ipfs/QmWQed5sU8UW12BSv38DrgKY4Kcp8SYSgf9uUM3vdaTTgc/15.html"
     }
 ];
